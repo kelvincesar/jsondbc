@@ -418,7 +418,7 @@ func (r *textReader) readMessage(lineIdx int) (*Message, error) {
 func (r *textReader) readSignal(lineIdx int) (*Signal, error) {
 	match, ok := applyReg(r.sigReg, r.lines[lineIdx])
 	if !ok {
-		return nil, r.getError(lineIdx, "invalid signal syntax")
+		return nil, r.getError(lineIdx, "invalid signal syntax on readSignal")
 	}
 
 	sigName := match[r.sigReg.SubexpIndex("sig_name")]

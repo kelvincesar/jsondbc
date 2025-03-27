@@ -55,7 +55,7 @@ func (r *DBCReader) Read(file *os.File) (*CanModel, error) {
 		nodeReg: reg.DBCNode,
 
 		msgStartReg: reg.DBCMessage,
-		msgEndReg:   regexp.MustCompile(`^$`),
+		msgEndReg:   regexp.MustCompile(`^\s*$`),
 
 		sigReg:       reg.DBCSignal,
 		extMuxSigReg: reg.DBCExtMuxSignal,
